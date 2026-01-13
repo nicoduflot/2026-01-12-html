@@ -197,6 +197,62 @@ Du <b>texte</b>
                 </blockquote>
             </article>
         </section>
+        <section>
+            <article>
+                <header>
+                    <h2>Em vs Rem</h2>
+                </header>
+                <p>
+                    Le em, ou cadratin, est une unité de mesure héritée du print, elle représentait la taille de base des fontes utilisées en imprimerie.
+                </p>
+                <p>
+                    Par exemple, le texte "normal" faisait 12 pt, les titre d'article 24 pt et le titre de la une 48 pt, alors 12 pt représente 1 cadratin (c'est à dire 1em), 24 -> 2em, etc.
+                </p>
+                <p>
+                    Dans le web, ce principe à été repris, mais le em n'est pas une unité stable : il va toujours se calculer par rapport à la taille en pixel de l'élément qui le contient
+                </p>
+                <div style="font-size: 2em;">
+                    <p>
+                        2em
+                    </p>
+                    <div style="font-size: 2em;">
+                        <p>
+                            2em
+                        </p>
+                    </div>
+                </div>
+                <div style="font-size: 2rem;">
+                    <p>
+                        2rem
+                    </p>
+                    <div style="font-size: 2rem;">
+                        <p>
+                            2rem
+                        </p>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <header>
+                    <h2>Les tailles des boîtes</h2>
+                </header>
+                <p>
+                    Par défaut, les tailles (hauteur et largeur) d'une boîte (un élément html rectangulaire) sont calculées par raport au contenu.
+                </p>
+                <p>
+                    les marges intérieures et l'épaisseur de la bordure ne sont pas pris en compte, la propriété qui gère le calcul "box-sizing" et à la valeur "content-box"
+                </p>
+                <p>
+                    Pour éviter d'avoir à calculer les tailles s'ajoutant sur une boîte, il faut passer, pour TOUS les éléments de la page, cette propriété à la valeur "border-box"
+                </p>
+                <div style="border: 1px solid black; padding: 0.5rem;box-sizing: content-box;width: 200px;">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta perferendis eaque itaque!
+                </div>
+                <div style="border: 1px solid black; padding: 0.5rem;box-sizing: border-box;width: 200px;">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta perferendis eaque itaque!
+                </div>
+            </article>
+        </section>
     </main>
     <footer>
         <div>

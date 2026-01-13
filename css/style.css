@@ -26,8 +26,15 @@ si 2em = 32 px, 1em = 16px
 }
 
 /* Déclarations générales */
-
 /* Calcul des largeurs de boîtes */
+/* le caractère "*" représente n'importe quelle suite de caractères, c'est à dire tous les sélecteur CSS possible, donc tous les élément HTML de la page, même ceux qui n'existent pas encore  */
+
+*{
+    box-sizing: border-box;
+}
+
+
+
 
 /* Déclaration des classes CSS */
 .site-title{
