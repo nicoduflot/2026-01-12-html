@@ -24,6 +24,11 @@ si 2em = 32 px, 1em = 16px
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-size: 1.3rem;
     line-height: 1.7rem;
+    /* il est possible de centraliser les couleurs utilisées sur le site dans le route, en exploitant des variables */
+    --main-site-bg: #F2F2F2;
+    --header-bg-color: #333333;
+    --header-color: #F2F2F2;
+    --header-link-color: #D99E30;
 }
 
 /* Déclarations générales */
@@ -33,15 +38,25 @@ si 2em = 32 px, 1em = 16px
 *{
     box-sizing: border-box;
 }
-
+/*
+tous les élément h1 et h2 de la page, sans execption, appliquent le css suivant
+*/
 h1, h2{
     font-family: 'FIGHTT3';
     font-weight: normal;
 }
 
 /* Déclaration des classes CSS */
+/* un élément qui possède au moins la classe site-title applique les règles css suivantes */
 .site-title{
     font-family: 'FIGHTT3';
+    font-size: 3rem;
+}
+/*
+si dans un élément avec la classe site-title il existe dans les descendants un élément small, cet élément small applique les règles css suivantes
+*/
+.site-title small{
+    font-size: 1.5rem;
 }
 
 .img-fluid{
@@ -54,6 +69,9 @@ Si plusieurs classe ou éléments partagent des propriétés similaire, pour le 
 avec les mêmes valeurs de propriétés, on les regroupes.
 */
 
+/*
+les éléments ayant la classe vignette ou la classe miniature
+*/
 .vignette, 
 .miniature{
     width: 100px;
@@ -72,4 +90,23 @@ avec les mêmes valeurs de propriétés, on les regroupes.
 /* Déclarations css de structure */
 body{
     margin: 0;
+    background-color: var(--main-site-bg);
+}
+
+/*
+les éléments header enfants directs de body
+*/
+
+body > header,
+body > nav,
+body > footer{
+    padding: 0.5rem 0;
+    background-color: var(--header-bg-color);
+    color: var(--header-color);
+}
+
+body > header a,
+body > nav a,
+body > footer a{
+    color: var(--header-link-color);
 }
