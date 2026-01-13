@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zenerds.com | Pop-culture et nerdisme</title>
     <link rel="stylesheet" href="./css/style.css" />
+    <script>
+        function playMedia(idCible){ document.getElementById(idCible).play()}
+        function pauseMedia(idCible){ document.getElementById(idCible).pause()}
+        function stopMedia(idCible){ document.getElementById(idCible).pause(); document.getElementById(idCible).currentTime = 0}
+    </script>
 </head>
 
 <body>
@@ -30,7 +35,65 @@
         </div>
     </nav>
     <main role="main" class="container">
-
+        <header>
+            <h1>Media audio et video</h1>
+        </header>
+        <section>
+            <article class="col-50">
+                <header>
+                    <h2>Audio hébergé par le site</h2>
+                </header>
+                <p>
+                        Pour mettre à disposition un fichier audio sur un site, on utlise la balise audio.
+                        Cette balise peut soit appeler un seul fichier, ou utiliser aussi la balise source.
+                    </p>
+                    <p>
+                        Utiliser plusieurs sources permet de s'adapter à la configuration de l'utilisateur. Un appareil,
+                        pour lire un fichier audio (ou vidéo) doit posséder les bon codecs. 
+                    </p>
+                    <p>
+                        Si je met a disposition un fichier avec une extension que l'appareil ne connaît pas, j'aurais une erreur. Si je propose le
+                        même son dans des formats différents avec source, l'appareil lancera le premier fichier qu'il
+                        est capable de lire.
+                    </p>
+                    <p>
+                        Comme il s'agit d'un media, on va utiliser <code>figure</code> afin de créer un référencement sur le document audio
+                    </p>
+                    <figure>
+                        <audio controls id="diablo">
+                            <source src="./media/audio/diablo_town.ogg" type="audio/ogg" />
+                            <source src="./media/audio/diablo_town.mp3" type="audio/mp3" />
+                        </audio>
+                        <figcaption>
+                            <p>
+                                Bande son du village de Tristram du jeu Diablo 1
+                            </p>
+                            <p>
+                                <button onclick="playMedia('diablo')" class="playerPlay play">Lire</button>
+                                <button onclick="pauseMedia('diablo')" class="playerPlay pause">Pause</button>
+                                <button onclick="stopMedia('diablo')" class="playerPlay stop">Stop</button>
+                            </p>
+                        </figcaption>
+                    </figure>
+            </article>
+            <article class="col-50">
+                <header>
+                    <h2>Vidéo hébergé par le site</h2>
+                </header>
+            </article>
+        </section>
+        <section>
+            <article class="col-50">
+                <header>
+                    <h2>Audio hébergé sur un site tiers</h2>
+                </header>
+            </article>
+            <article class="col-50">
+                <header>
+                    <h2>Vidéo hébergé sur un site tiers</h2>
+                </header>
+            </article>
+        </section>
     </main>
     <footer>
         <div class="container">
