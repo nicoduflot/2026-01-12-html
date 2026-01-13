@@ -33,12 +33,34 @@ si 2em = 32 px, 1em = 16px
     box-sizing: border-box;
 }
 
-
-
-
 /* Déclaration des classes CSS */
 .site-title{
 
+}
+
+.img-fluid{
+    max-width: 100%;
+}
+
+/* 
+En CSS, on essai d'appliquer le D.R.Y. "Don't Repeat Yourself 
+Si plusieurs classe ou éléments partagent des propriétés similaire, pour le même but,
+avec les mêmes valeurs de propriétés, on les regroupes.
+*/
+
+.vignette, 
+.miniature{
+    width: 100px;
+    height: 100px;
+}
+
+.vignette{
+    object-fit: cover;
+}
+
+.miniature{
+    object-fit: contain;
+    background-color: black;
 }
 
 /* Déclarations css de structure */
