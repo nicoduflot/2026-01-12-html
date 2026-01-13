@@ -29,6 +29,7 @@ si 2em = 32 px, 1em = 16px
     --header-bg-color: #333333;
     --header-color: #F2F2F2;
     --header-link-color: #D99E30;
+    --gutter: 0.5rem;
 }
 
 /* Déclarations générales */
@@ -87,6 +88,12 @@ les éléments ayant la classe vignette ou la classe miniature
     background-color: black;
 }
 
+.container{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* Déclarations css de structure */
 body{
     margin: 0;
@@ -100,13 +107,52 @@ les éléments header enfants directs de body
 body > header,
 body > nav,
 body > footer{
-    padding: 0.5rem 0;
+    padding: var(--gutter);
     background-color: var(--header-bg-color);
     color: var(--header-color);
 }
+
 
 body > header a,
 body > nav a,
 body > footer a{
     color: var(--header-link-color);
+}
+
+nav[role="navigation"] ul{
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav[role="navigation"] ul li a{
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: block;
+    text-decoration: none;
+}
+
+nav[role="navigation"] ul li a:hover{
+    color: var(--header-bg-color);
+    background-color: var(--header-link-color);
+}
+
+main > header,
+section article{
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+}
+
+@media screen and (min-width: 1100px){
+    .container{
+        width: 1024px;
+    }
+}
+
+@media screen and (min-width: 1400px){
+    .container{
+        width: 1320px;
+    }
 }
