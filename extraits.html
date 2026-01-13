@@ -7,9 +7,9 @@
     <title>Zenerds.com | Pop-culture et nerdisme</title>
     <link rel="stylesheet" href="./css/style.css" />
     <script>
-        function playMedia(idCible){ document.getElementById(idCible).play()}
-        function pauseMedia(idCible){ document.getElementById(idCible).pause()}
-        function stopMedia(idCible){ document.getElementById(idCible).pause(); document.getElementById(idCible).currentTime = 0}
+        function playMedia(idCible) { document.getElementById(idCible).play() }
+        function pauseMedia(idCible) { document.getElementById(idCible).pause() }
+        function stopMedia(idCible) { document.getElementById(idCible).pause(); document.getElementById(idCible).currentTime = 0 }
     </script>
 </head>
 
@@ -44,62 +44,82 @@
                     <h2>Audio hébergé par le site</h2>
                 </header>
                 <p>
-                        Pour mettre à disposition un fichier audio sur un site, on utlise la balise audio.
-                        Cette balise peut soit appeler un seul fichier, ou utiliser aussi la balise source.
-                    </p>
-                    <p>
-                        Utiliser plusieurs sources permet de s'adapter à la configuration de l'utilisateur. Un appareil,
-                        pour lire un fichier audio (ou vidéo) doit posséder les bon codecs. 
-                    </p>
-                    <p>
-                        Si je met a disposition un fichier avec une extension que l'appareil ne connaît pas, j'aurais une erreur. Si je propose le
-                        même son dans des formats différents avec source, l'appareil lancera le premier fichier qu'il
-                        est capable de lire.
-                    </p>
-                    <p>
-                        Comme il s'agit d'un media, on va utiliser <code>figure</code> afin de créer un référencement sur le document audio
-                    </p>
-                    <figure>
-                        <audio controls id="diablo">
-                            <source src="./media/audio/diablo_town.ogg" type="audio/ogg" />
-                            <source src="./media/audio/diablo_town.mp3" type="audio/mp3" />
-                        </audio>
-                        <figcaption>
-                            <p>
-                                Bande son du village de Tristram du jeu Diablo 1
-                            </p>
-                            <p>
-                                <button onclick="playMedia('diablo')" class="playerPlay play">Lire</button>
-                                <button onclick="pauseMedia('diablo')" class="playerPlay pause">Pause</button>
-                                <button onclick="stopMedia('diablo')" class="playerPlay stop">Stop</button>
-                            </p>
-                        </figcaption>
-                    </figure>
+                    Pour mettre à disposition un fichier audio sur un site, on utlise la balise audio.
+                    Cette balise peut soit appeler un seul fichier, ou utiliser aussi la balise source.
+                </p>
+                <p>
+                    Utiliser plusieurs sources permet de s'adapter à la configuration de l'utilisateur. Un appareil,
+                    pour lire un fichier audio (ou vidéo) doit posséder les bon codecs.
+                </p>
+                <p>
+                    Si je met a disposition un fichier avec une extension que l'appareil ne connaît pas, j'aurais une
+                    erreur. Si je propose le
+                    même son dans des formats différents avec source, l'appareil lancera le premier fichier qu'il
+                    est capable de lire.
+                </p>
+                <p>
+                    Comme il s'agit d'un media, on va utiliser <code>figure</code> afin de créer un référencement sur le
+                    document audio
+                </p>
+                <figure>
+                    <audio controls id="diablo">
+                        <source src="./media/audio/diablo_town.ogg" type="audio/ogg" />
+                        <source src="./media/audio/diablo_town.mp3" type="audio/mp3" />
+                    </audio>
+                    <figcaption>
+                        <p>
+                            Bande son du village de Tristram du jeu Diablo 1
+                        </p>
+                        <p>
+                            <button onclick="playMedia('diablo')" class="playerPlay play">Lire</button>
+                            <button onclick="pauseMedia('diablo')" class="playerPlay pause">Pause</button>
+                            <button onclick="stopMedia('diablo')" class="playerPlay stop">Stop</button>
+                        </p>
+                    </figcaption>
+                </figure>
             </article>
             <article class="col-50">
                 <header>
                     <h2>Vidéo hébergé par le site</h2>
                 </header>
                 <p>
-                    La balise <code>video</code> se comporte comme la balise audio, avec cependant quelques attributs supplémentaires.
+                    La balise <code>video</code> se comporte comme la balise audio, avec cependant quelques attributs
+                    supplémentaires.
                 </p>
                 <figure>
-                    <video controls src="./media/video/Fallout-4-Launch-Trailer.mp4" muted id="fallout" class="img-fluid"></video>
+                    <video controls src="./media/video/Fallout-4-Launch-Trailer.mp4" muted id="fallout"
+                        class="img-fluid"></video>
                     <figcaption>
-                            <p>
-                                Trailer de l'annonce de Fallout 4
-                            </p>
-                            <p>
-                                <button onclick="playMedia('fallout')" class="playerPlay play">Lire</button>
-                                <button onclick="pauseMedia('fallout')" class="playerPlay pause">Pause</button>
-                                <button onclick="stopMedia('fallout')" class="playerPlay stop">Stop</button>
-                            </p>
-                        </figcaption>
+                        <p>
+                            Trailer de l'annonce de Fallout 4
+                        </p>
+                        <p>
+                            <button onclick="playMedia('fallout')" class="playerPlay play">Lire</button>
+                            <button onclick="pauseMedia('fallout')" class="playerPlay pause">Pause</button>
+                            <button onclick="stopMedia('fallout')" class="playerPlay stop">Stop</button>
+                        </p>
+                    </figcaption>
                 </figure>
                 <p>
-                    Exercice : Recréer la figure vidéo avec le lecteur pour les deux vidéos nommées "Big Buck Bunny", utiliser l'id "bunny" pour l'élément vidéo
+                    Exercice : Recréer la figure vidéo avec le lecteur pour les deux vidéos nommées "Big Buck Bunny",
+                    utiliser l'id "bunny" pour l'élément vidéo
                 </p>
-                
+                <figure>
+                    <video controls muted id="bunny" class="img-fluid">
+                        <source src="./media/video/Big_Buck_Bunny_360_10s_1MB.mp4" type="video/mp4" />
+                        <source src="./media/video/Big_Buck_Bunny_360_10s_1MB.webm" type="video/webm" />
+                    </video>
+                    <figcaption>
+                        <p>
+                            Big buck bunny
+                        </p>
+                        <p>
+                            <button onclick="playMedia('bunny')" class="playerPlay play">Lire</button>
+                            <button onclick="pauseMedia('bunny')" class="playerPlay pause">Pause</button>
+                            <button onclick="stopMedia('bunny')" class="playerPlay stop">Stop</button>
+                        </p>
+                    </figcaption>
+                </figure>
             </article>
         </section>
         <section>
@@ -107,11 +127,93 @@
                 <header>
                     <h2>Audio hébergé sur un site tiers</h2>
                 </header>
+                <p>
+                    La plupart des sites d'écoute audio permettent, selon les droits, de partager une chanson ou un
+                    album (ou podcast), à l'aide d'intégration d'une page ayant un lecteur audio écrit en HTML - CSS et
+                    géré généralement par du javascript.
+                </p>
+                <p>
+                    Cette page est intégrée au site via une iframe
+                </p>
+                <p>
+                    Une iframe et un cadre dans la page courante permettant d'appeler un document sur le web, qu'il soit
+                    sur le site qu'on visite ou sur un site tiers
+                </p>
+                <p>
+                    Si le serveur hébergeur di site tiers n'autorise pas le partage des document de cette façon, un
+                    erreur s'affichera à la place de l'éméent qu'on souhaite intégrer
+                </p>
+                <h3>Bandcamp</h3>
+                <figure>
+                    <iframe style="border: 0; width: 100%; height: 120px;"
+                        src="https://bandcamp.com/EmbeddedPlayer/album=4270514739/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=true/artwork=small/transparent=true/"
+                        seamless><a href="https://weswaltz.bandcamp.com/album/the-blackburn-sessions">The Blackburn
+                            Sessions
+                            de Wes Waltz</a></iframe>
+                </figure>
+                <h3>Soundcloud</h3>
+                <figure>
+                    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A1301981230&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                    <div
+                        style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                        <a href="https://soundcloud.com/lizzomusic" title="Lizzo" target="_blank"
+                            style="color: #cccccc; text-decoration: none;">Lizzo</a> · <a
+                            href="https://soundcloud.com/lizzomusic/2-be-loved-am-i-ready"
+                            title="2 Be Loved (Am I Ready)" target="_blank"
+                            style="color: #cccccc; text-decoration: none;">2 Be Loved (Am I Ready)</a>
+                    </div>
+                </figure>
             </article>
             <article class="col-50">
                 <header>
                     <h2>Vidéo hébergé sur un site tiers</h2>
                 </header>
+                <p>
+                    Les vidéo hébergées sur un site tiers le sont aussi grace aux iframes.
+                </p>
+                <h3>Youtube</h3>
+                <figure style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                    <iframe
+                        style="width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border:none;"
+                        src="https://www.youtube.com/embed/rrT6v5sOwJg?si=gyhjf6_J0o9ZovKu" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </figure>
+                <h3>Dailymotion</h3>
+                <figure style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;"><iframe
+                        src="https://geo.dailymotion.com/player.html?video=x2mw05j"
+                        style="width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border:none;"
+                        allowfullscreentitle="Dailymotion Video Player" allow="web-share"></iframe></figure>
+            </article>
+            <article>
+                <header>
+                    <h2>la balise iframe</h2>
+                </header>
+                <p>
+                    L'élément iframe permet d'insérer une page internet dans le document, mais pas que, il est possible
+                    d'insérer d'autres types de fichiers, par exemple des pdf ou directement des fichiers vidéos, sons,
+                    etc.
+                </p>
+                <p>
+                    L'iframe avait un ancètre, la combinaison frameset et frame.
+                </p>
+                <ul>
+                    <li>
+                        <a href="./documents/CRAM.pdf" target="documents">CRAM</a>
+                    </li>
+                    <li>
+                        <a href="./documents/books.xml" target="documents">books.xml</a>
+                    </li>
+                    <li>
+                        <a href="./documents/PP3.pdf" target="documents">PP3</a>
+                    </li>
+                </ul>
+                <figure style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;" >
+                    <iframe style="width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border:none;" name="documents"
+                        src="./documents/CRAM.pdf"></iframe>
+                </figure>
             </article>
         </section>
     </main>
