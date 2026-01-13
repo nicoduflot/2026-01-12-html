@@ -149,6 +149,32 @@ section article{
     .container{
         width: 1024px;
     }
+
+    main section{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    main section > *{
+        width: 100%;
+    }
+
+    /*
+    si un sélecteur ressempble à ça : 
+    main .toto
+    on désigne un élément ayant au moins la classe toto dans la descendance d'un élément main
+
+    si le sélecteur ressemble à ça :
+    main.toto
+    on désigne un élément main ayant au moins la classe toto
+
+    donc section > *.col désigne n'importe quel élément ayant au moins la classe col et étant enfant direct d'un élément section qui est descendant d'un élément main
+    */
+
+    main section > *.col-50{
+        width: 50%;
+    }
+    
 }
 
 @media screen and (min-width: 1400px){
