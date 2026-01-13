@@ -1,7 +1,7 @@
 /*
 import de fichiers css
 */
-
+@import url('./FIGHTT3.css');
 /*
 dimensions les plus vues en web :
 px      =>  Pixel
@@ -35,7 +35,7 @@ si 2em = 32 px, 1em = 16px
 
 /* Déclaration des classes CSS */
 .site-title{
-
+    font-family: 'FIGHTT3';
 }
 
 .img-fluid{
