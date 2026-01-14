@@ -147,21 +147,116 @@
                             Informations personnelles
                         </legend>
                         <p>
-                            <label for="nom">Nom :</label> 
+                            <label for="nom">Nom :</label>
                             <input name="nom" id="nom" type="text" autofocus required aria-describedby="info-nom" />
                         </p>
                         <div id="info-nom" class="message message-info">
                             Veuillez entrer votre nom de famille, ce champ est obligatoire
                         </div>
                         <p>
-                            <label for="email">Email :</label> 
+                            <label for="email">Email :</label>
                             <input name="email" id="email" type="email" required aria-describedby="info-email"
-                            pattern="^[\w\-\+]+(\.[\w\-]+)*@[\w\-]+(\.[\w\-]+)*\.[\w\-]{2,15}$"
-                            />
+                                pattern="^[\w\-\+]+(\.[\w\-]+)*@[\w\-]+(\.[\w\-]+)*\.[\w\-]{2,15}$" />
                         </p>
                         <div id="info-email" class="message message-info">
                             Veuillez entrer votre email de contact principal, ce champ est obligatoire
                         </div>
+                        <p>
+                            <label for="age-legal">Votre âge :</label>
+                            <input type="number" name="age-legal" id="age-legal" aria-describedby="info-age-legal"
+                                min="13" max="99" />
+                        </p>
+                        <div id="info-age-legal" class="message message-info">
+                            Veuillez entrer votre age, vous devez avoir au moins 13 ans, ce champ est obligatoire et
+                            limité à 99 ans
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Votre demande</legend>
+                        <p>
+                            <label>Type de demande</label>
+                            <select name="type-demande" id="type-demande" required aria-describedby="info-type-demande">
+                                <option aria-label="Choix de demande" value="">Choisissez le type de demande</option>
+                                <optgroup label="Options unitaires">
+                                    <option aria-label="Option unitaire n°1">Option n° 1</option>
+                                    <option aria-label="Option unitaire n°2">Option n° 2</option>
+                                    <option aria-label="Option unitaire n°3">Option n° 3</option>
+                                    <option aria-label="Option unitaire n°4">Option n° 4</option>
+                                    <option aria-label="Option unitaire n°5">Option n° 5</option>
+                                </optgroup>
+                                <optgroup label="Regroupement d'options">
+                                    <option aria-label="Regroupement d'option sauf option n°1">Toutes sauf option n°1
+                                    </option>
+                                    <option aria-label="Regroupement d'option sauf option n°2">Toutes sauf option n°2
+                                    </option>
+                                    <option aria-label="Regroupement d'option sauf option n°3">Toutes sauf option n°3
+                                    </option>
+                                </optgroup>
+                            </select>
+                        </p>
+                        <div id="info-type-demande" class="message message-info">
+                            Veuillez sélectionner le type de demande, ce champs est obligatoire
+                        </div>
+                        <p>
+                            <label>Vous représentez :</label><br />
+                            <input type="radio" name="personne" id="physique" value="physique" checked
+                                aria-describedby="info-personne" /> <label for="physique">Personne
+                                physique</label><br />
+                            <input type="radio" name="personne" id="morale" value="morale"
+                                aria-describedby="info-personne" /> <label for="morale">Personne morale</label>
+                        </p>
+                        <div id="info-personne" class="message message-info">
+                            Veuillez indiquez si vous représentez une personne physique (un particulier) ou une
+                                personne morale (Une entreprise, une asso...).
+                        </div>
+                        <p>
+                            <label>Vos modèles de diffusion</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" name="diff-email" id="diff-email" value="email" aria-describedby="info-diff" /> 
+                            <label for="diff-email">Campagnes d'emailing</label>
+                            <input type="checkbox" name="diff-tel" id="diff-tel" value="tel" aria-describedby="info-diff" /> 
+                            <label for="diff-tel">Télé-opérateurs</label>
+                            <input type="checkbox" name="diff-radio" id="diff-radio" value="radio" aria-describedby="info-diff" /> 
+                            <label for="diff-radio">Annonces radiophoniques</label>
+                            <input type="checkbox" name="diff-tv" id="diff-tv" value="tv" aria-describedby="info-diff" /> 
+                            <label for="diff-tv">Publicités télévisuelles</label>
+                        </p>
+                        <div id="info-diff"  class="message message-info">
+                            Choisissez votre ou vos méthode de diffusions, si aucune méthode n'est choisie, un commercial vous contactera.
+                        </div>
+                        <p>
+                            <input type="range" name="range" id="range" min="0" max="10" step="0.5" value="5" /> <span id="value-range">5</span>
+                            <script>
+                                /* on récupère le range dans une variable */
+                                const range = document.getElementById('range');
+                                /* on récupère le l'affichage de la valeur (le span) dans une variable */
+                                const valueRange = document.getElementById('value-range');
+                                /* on surveille un changement dans le range */
+                                range.addEventListener('change', function(){
+                                    valueRange.innerHTML = range.value;
+                                    /* quand la valeur change, on remplace le html du span par la nouvelle valeur */
+                                });
+                            </script>
+                        </p>
+                        <p>
+                            <input type="color" name="color" id="color" /> <span id="value-color">#000000</span>
+                            <script>
+                                /* on récupère le color dans une variable */
+                                const color = document.getElementById('color');
+                                /* on récupère le l'affichage de la valeur (le span) dans une variable */
+                                const valueColor = document.getElementById('value-color');
+                                /* on surveille un changement dans le color */
+                                color.addEventListener('change', function(){
+                                    valueColor.innerHTML = color.value;
+                                    /* quand la valeur change, on remplace le html du span par la nouvelle valeur */
+                                });
+                            </script>
+                        </p>
+                        <p>
+                            <label for="message">Votre </label> <br />
+                            <textarea name="message" id="message"></textarea>
+                        </p>
                     </fieldset>
                     <p>
                         <button type="submit" value="envoi">Envoyer</button>
