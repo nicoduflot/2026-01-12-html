@@ -3,6 +3,7 @@ import de fichiers css
 */
 @import url("./FIGHTT3.css");
 @import url("./roboto.css");
+@import url("./bootstrap-icons.css");
 /*
 dimensions les plus vues en web :
 px      =>  Pixel
@@ -35,6 +36,23 @@ si 2em = 32 px, 1em = 16px
   --header-link-color: #d99e30;
   --gutter: 0.5rem;
   --form-action-color: #0084f7;
+  /* couleurs de fond informatives */
+  --info-bg-color: #b4d0e8;
+  --danger-bg-color: #f1aeb5;
+  --success-bg-color: #a3cfbb;
+  --warning-bg-color: #f1d3ae;
+  /* couleurs de bordure informatives */
+  --info-border-color: #1583e3;
+  --danger-border-color: #ea2a3d;
+  --success-border-color: #07ca73;
+  --warning-border-color: #ec8a12;
+  /* couleurs de fond neutres */
+  --light-bg-color: #dddddd;
+  --dark-bg-color: #454545;
+  /* couleurs de bordure neutres */
+  --light-border-color: #666666;
+  --dark-border-color: black;
+  --dark-color: white;
 }
 
 /* Déclarations générales */
@@ -232,7 +250,58 @@ form textarea{
   height: 25vh;
 }
 /* les classes info et boutons */
+.message{
+  margin: calc( var(--gutter) / 2) ;
+  padding: calc( var(--gutter) / 2) ;
+  font-size: 0.9rem;
+  font-style: italic;
+  border-radius: calc( var(--gutter) / 2) ;
+  border-style: solid;
+  border-color: transparent;
+}
 
+.message::before{
+  font-family: 'bootstrap-icons';
+  font-style: normal;
+}
+
+.message-info{
+  background-color: var(--info-bg-color);
+  border-color: var(--info-border-color);
+}
+
+.message-info::before{
+  content: "\F430";
+}
+
+.message-success{
+  background-color: var(--success-bg-color);
+  border-color: var(--success-border-color);
+}
+
+.message-success::before{
+  content: "\F26A";
+}
+
+.message-danger{
+  background-color: var(--danger-bg-color);
+  border-color: var(--danger-border-color);
+}
+.message-warning{
+  background-color: var(--warning-bg-color);
+  border-color: var(--warning-border-color);
+}
+.message-light{
+  background-color: var(--light-bg-color);
+  border-color: var(--light-border-color);
+}
+.message-dark{
+  background-color: var(--dark-bg-color);
+  border-color: var(--dark-border-color);
+  color: var(--dark-color);
+}
+
+/* changer l'apparence des champs quand invalide ou valide */
 
 @media screen and (min-width: 720px) {
   article form{
