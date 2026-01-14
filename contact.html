@@ -39,10 +39,97 @@
         <section>
             <article class="col-50">
                 <header>
-                    <h2>La balise <code>form</code></h2>
+                    <h2>Utilisation</h2>
                 </header>
                 <p>
-                    
+                    Les formulaires servent a récupérer des informations pour traitement, par exemple, un serveur
+                    php qui pourra les enregistrer en fichier, en bdd, ou les envoyer par mail.
+                </p>
+                <p>
+                    Un formulaire se déclare à l'aide de la balise <code>form</code>. Il possède des
+                    attributs, dont les plus courants et importants sont : method & action
+                </p>
+            </article>
+            <article class="col-50">
+                <header>
+                    <h2>method</h2>
+                </header>
+                <p>
+                    method définit la façon d'envoyer les résultats
+                </p>
+                <ul>
+                    <li>
+                        GET : <br />
+                        Les données sont associées à des noms de variables, et enoyées à la page de traitement dans
+                        l'url.
+                    </li>
+                    <li>
+                        POST : <br />
+                        Les données sont transmise dans des variable dans l'entête HTTP
+                    </li>
+                </ul>
+                <p>
+                    Si la balise form est utilisée sans précision de la méthode, c'est GET qui sera utilisée par défaut
+                </p>
+            </article>
+            <article class="col-50">
+                <header>
+                    <h2>action</h2>
+                </header>
+                <p>
+                    Indique l'url de la page de traitement des données envoyées par le formulaire.
+                    Si action n'est pas précisé, le formulaire considère que c'est la page où il
+                    se trouve qui sera la page de traitement.
+                </p>
+            </article>
+            <article class="col-50">
+                <header>
+                    <h2>Optionnel : enctype</h2>
+                </header>
+                <p>
+                    Si votre formulaire doit téléverser des fichiers, il faut absolument ajouter l'attribut enctype
+                    avec la valeur enctype="multipart/form-data"
+                </p>
+                <p>
+                    De plus, à l'intérieur du formulaire, il faut ajouter un élément de formulaire "invisible" :
+                    <br />
+                    <code>&lt;input type="hidden" name="MAX_FILE_SIZE" value="30000000" /&gt;</code>
+                </p>
+                <p>
+                    value est une valeur en octets, la valeur de l'exemple précédent est un exemple.
+                </p>
+            </article>
+            <article class="col-50">
+                <header>
+                    <h2>submit</h2>
+                </header>
+                <p>
+                    Pour pouvoir envoyer le formulaire, il faut à l'intérieur un élément clicable (un bouton, une image)
+                    qui doit posséder l'attribut type="submit". Le type submit déclenche l'envoi du formulaire dans
+                    lequel il se trouve.
+                </p>
+                <p>
+                    Par défaut, si un bouton sans type est présent dans un formulaire, quand on clique dessus, le
+                    comportement par défaut sera d'envoyer le formulaire.
+                </p>
+            </article>
+            <article class="col-50">
+                <header>
+                    <h2>reset</h2>
+                </header>
+                <p>
+                    Si dans un bouton du formulaire, l'attribut type="reset", en cliquant dessus, toutes les
+                    informations du formulaire dans lequel il se trouve, renseignées par l'utilisateur seront
+                    effacées.
+                </p>
+            </article>
+            <article class="col-50">
+                <header>
+                    <h2>button</h2>
+                </header>
+                <p>
+                    Si dans un bouton du formulaire, l'attribut type="button", cela indique au navigateur que ce
+                    bouton sert à faire autre chose, généralement un comportement développé en javascript.
                 </p>
             </article>
         </section>
