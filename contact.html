@@ -133,6 +133,42 @@
                 </p>
             </article>
         </section>
+        <section>
+            <article>
+                <header>
+                    <h2>Exemple de formulaire</h2>
+                </header>
+                <script>
+                    console.log('coucou');                    
+                </script>
+                <form method="post" action="./contact.html">
+                    <fieldset>
+                        <legend>
+                            Informations personnelles
+                        </legend>
+                        <p>
+                            <label for="nom">Nom :</label> 
+                            <input name="nom" id="nom" type="text" autofocus required aria-describedby="info-nom" />
+                        </p>
+                        <div id="info-nom" class="message message-info">
+                            Veuillez entrer votre nom de famille, ce champ est obligatoire
+                        </div>
+                        <p>
+                            <label for="email">Email :</label> 
+                            <input name="email" id="email" type="email" required aria-describedby="info-email"
+                            pattern="^[\w\-\+]+(\.[\w\-]+)*@[\w\-]+(\.[\w\-]+)*\.[\w\-]{2,15}$"
+                            />
+                        </p>
+                        <div id="info-email" class="message message-info">
+                            Veuillez entrer votre email de contact principal, ce champ est obligatoire
+                        </div>
+                    </fieldset>
+                    <p>
+                        <button type="submit" value="envoi">Envoyer</button>
+                    </p>
+                </form>
+            </article>
+        </section>
     </main>
     <footer>
         <div class="container">
