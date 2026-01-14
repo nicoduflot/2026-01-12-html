@@ -28,7 +28,9 @@ si 2em = 32 px, 1em = 16px
   line-height: var(--line-height);
   /* il est possible de centraliser les couleurs utilisées sur le site dans le route, en exploitant des variables */
   --main-site-bg: #f2f2f2;
-  --header-bg-color: #333333;
+  --header-bg-val : 51, 51, 51;
+  --header-bg-color: rgb(var(--header-bg-val)); /* transformé en rgb(51, 51, 51) */
+  --header-bg-color-50: rgba( var(--header-bg-val), 0.5 ); /* transformé en rgba(51, 51, 51, 0.5) */
   --header-color: #f2f2f2;
   --header-link-color: #d99e30;
   --gutter: 0.5rem;
@@ -167,6 +169,40 @@ main > header,
 section article {
   padding-left: var(--gutter);
   padding-right: var(--gutter);
+}
+
+/* css orienté formulaire */
+fieldset{
+  border-style: solid;
+  border-color: var(--header-bg-color-50);
+  border-radius: calc( var(--gutter) / 2) ;
+  margin-bottom: var(--gutter);
+}
+
+legend{
+  border-style: inherit;
+  border-color: inherit;
+  border-width: inherit;
+  border-radius: inherit;
+  padding-left: calc( var(--gutter) / 2);
+  padding-right: calc( var(--gutter) / 2);
+}
+
+/* les inputs concerné text, email, number */
+
+/* le select */
+
+/* le textarea */
+
+/* les classes info et boutons */
+
+
+@media screen and (min-width: 720px) {
+  article form{
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media screen and (min-width: 1100px) {

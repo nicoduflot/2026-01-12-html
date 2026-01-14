@@ -148,7 +148,7 @@
                         </legend>
                         <p>
                             <label for="nom">Nom :</label>
-                            <input name="nom" id="nom" type="text" autofocus required aria-describedby="info-nom" />
+                            <input name="nom" id="nom" type="text" autofocus required aria-describedby="info-nom" placeholder="Dupond" />
                         </p>
                         <div id="info-nom" class="message message-info">
                             Veuillez entrer votre nom de famille, ce champ est obligatoire
@@ -226,7 +226,8 @@
                             Choisissez votre ou vos méthode de diffusions, si aucune méthode n'est choisie, un commercial vous contactera.
                         </div>
                         <p>
-                            <input type="range" name="range" id="range" min="0" max="10" step="0.5" value="5" /> <span id="value-range">5</span>
+                            <span id="tagRange">Range</span> <br />
+                            <input type="range" name="range" id="range" min="0" max="10" step="0.5" value="5" aria-labelledby="tagRange" /> <span id="value-range">5</span>
                             <script>
                                 /* on récupère le range dans une variable */
                                 const range = document.getElementById('range');
@@ -240,7 +241,7 @@
                             </script>
                         </p>
                         <p>
-                            <input type="color" name="color" id="color" /> <span id="value-color">#000000</span>
+                            <input type="color" name="color" id="color" aria-label="color" /> <span id="value-color">#000000</span>
                             <script>
                                 /* on récupère le color dans une variable */
                                 const color = document.getElementById('color');
@@ -255,7 +256,7 @@
                         </p>
                         <p>
                             <label for="message">Votre </label> <br />
-                            <textarea name="message" id="message"></textarea>
+                            <textarea name="message" id="message" placeholder="Votre demande ici :"></textarea>
                         </p>
                     </fieldset>
                     <p>
