@@ -250,31 +250,50 @@ form textarea{
   height: 25vh;
 }
 /* les classes info et boutons */
-.message{
+/* Exercice : créer les classes btn, btn-success, btn-warning et btn light dans le même principe que les classes message, sans icônes */
+
+.message,
+.btn{
   margin: calc( var(--gutter) / 2) ;
   padding: calc( var(--gutter) / 2) ;
   font-size: 0.9rem;
-  font-style: italic;
   border-radius: calc( var(--gutter) / 2) ;
   border-style: solid;
   border-color: transparent;
 }
 
-.message::before{
-  font-family: 'bootstrap-icons';
-  font-style: normal;
+.message{
+  font-style: italic;
 }
 
-.message-info{
+.message::before,
+.btn::before{
+  font-family: 'bootstrap-icons';
+  font-style: normal;
+  font-size: 0.9rem;
+  display: inline-block;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: -0.125rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-right: 0.125rem;
+}
+
+.message-info,
+.btn-info,
+.btn-info-icon{
   background-color: var(--info-bg-color);
   border-color: var(--info-border-color);
 }
 
-.message-info::before{
+.message-info::before,
+.btn-info-icon::before{
   content: "\F430";
 }
 
-.message-success{
+.message-success,
+.btn-success{
   background-color: var(--success-bg-color);
   border-color: var(--success-border-color);
 }
@@ -283,7 +302,8 @@ form textarea{
   content: "\F26A";
 }
 
-.message-danger{
+.message-danger,
+.btn-danger{
   background-color: var(--danger-bg-color);
   border-color: var(--danger-border-color);
 }
@@ -292,7 +312,8 @@ form textarea{
   content: "\F67B";
 }
 
-.message-warning{
+.message-warning,
+.btn-warning{
   background-color: var(--warning-bg-color);
   border-color: var(--warning-border-color);
 }
@@ -301,32 +322,45 @@ form textarea{
   content: "\F336";
 }
 
-.message-light{
+.message-light,
+.btn-light{
   background-color: var(--light-bg-color);
   border-color: var(--light-border-color);
 }
-.message-dark{
+
+.message-dark,
+.btn-dark{
   background-color: var(--dark-bg-color);
   border-color: var(--dark-border-color);
   color: var(--dark-color);
 }
 
-/* Exercice : créer les classes btn, btn-success, btn-warning et btn light dans le même principe que les classes message, sans icônes */
 
-.btn{
 
-}
-
-.btn-success{
-  
-}
-
-.btn-warning{
-
-}
-
-.btn-light{
-
+.btn-info:hover,
+.btn-info:focus,
+.btn-info:focus-visible,
+.btn-info-icon:hover,
+.btn-info-icon:focus,
+.btn-info-icon:focus-visible,
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:focus-visible,
+.btn-warning:hover,
+.btn-warning:focus,
+.btn-warning:focus-visible,
+.btn-danger:hover,
+.btn-danger:focus,
+.btn-danger:focus-visible,
+.btn-light:hover,
+.btn-light:focus,
+.btn-light:focus-visible,
+.btn-dark:hover,
+.btn-dark:focus,
+.btn-dark:focus-visible
+{
+  cursor: pointer;
+  opacity: 0.8;
 }
 
 /* changer l'apparence des champs quand invalide ou valide */
