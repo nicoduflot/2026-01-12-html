@@ -287,10 +287,20 @@ form textarea{
   background-color: var(--danger-bg-color);
   border-color: var(--danger-border-color);
 }
+
+.message-danger::before{
+  content: "\F67B";
+}
+
 .message-warning{
   background-color: var(--warning-bg-color);
   border-color: var(--warning-border-color);
 }
+
+.message-warning::before{
+  content: "\F336";
+}
+
 .message-light{
   background-color: var(--light-bg-color);
   border-color: var(--light-border-color);
@@ -300,6 +310,10 @@ form textarea{
   border-color: var(--dark-border-color);
   color: var(--dark-color);
 }
+
+/* Exercice : créer les classes btn, btn-success, btn-warning et btn light dans le même principe que les classes message, sans icônes */
+
+
 
 /* changer l'apparence des champs quand invalide ou valide */
 
