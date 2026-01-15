@@ -313,7 +313,21 @@ form textarea{
 
 /* Exercice : créer les classes btn, btn-success, btn-warning et btn light dans le même principe que les classes message, sans icônes */
 
+.btn{
 
+}
+
+.btn-success{
+  
+}
+
+.btn-warning{
+
+}
+
+.btn-light{
+
+}
 
 /* changer l'apparence des champs quand invalide ou valide */
 
